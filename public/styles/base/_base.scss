@@ -32,7 +32,7 @@ body {
   margin: 0;
   direction: rtl;
   font-family: 'Vazir' !important;
-  background-color: $bgWhite !important;
+  background-color: $lightBlue !important;
 }
 
 * {
@@ -89,4 +89,8 @@ body {
 .blue-button{
   background-color: $blue !important;
 }
+span{
+  margin: 0px;
+  @include FontStyle(0.75rem, normal, $gray);
 
+}
