@@ -46,12 +46,24 @@ body {
   }
 }
 
-.padd-l-10 {
-  padding-left: 10px;
+.marg-t-12 {
+  margin-top: 12px;
+}
+
+.marg-t-36 {
+  margin-top: 36px;
 }
 
 .height-500 {
   height: 500px;
+}
+
+.error-text {
+  font-size: 14px;
+  color: #FC4A56 !important;
+  display: flex;
+  align-items: right;
+  margin-top: 6px;
 }
 
 .margin-b-0 {
@@ -70,19 +82,25 @@ body {
   background: #909090;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .blue-button {
   background-color: #019ba7 !important;
 }
 
-span {
-  margin: 0px;
-  width: auto;
-  height: auto;
-  font-family: "Vazir" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-size: 0.75rem !important;
-  color: #909090 !important;
+.blue-transparent-button {
+  background: #019ba7 !important;
+  opacity: 0.3;
+  color: #FFFFFF;
 }
 
 @font-face {
@@ -133,12 +151,24 @@ body {
   }
 }
 
-.padd-l-10 {
-  padding-left: 10px;
+.marg-t-12 {
+  margin-top: 12px;
+}
+
+.marg-t-36 {
+  margin-top: 36px;
 }
 
 .height-500 {
   height: 500px;
+}
+
+.error-text {
+  font-size: 14px;
+  color: #FC4A56 !important;
+  display: flex;
+  align-items: right;
+  margin-top: 6px;
 }
 
 .margin-b-0 {
@@ -157,19 +187,25 @@ body {
   background: #909090;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .blue-button {
   background-color: #019ba7 !important;
 }
 
-span {
-  margin: 0px;
-  width: auto;
-  height: auto;
-  font-family: "Vazir" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-size: 0.75rem !important;
-  color: #909090 !important;
+.blue-transparent-button {
+  background: #019ba7 !important;
+  opacity: 0.3;
+  color: #FFFFFF;
 }
 
 .input-icon {
@@ -177,6 +213,7 @@ span {
   flex-direction: column;
   text-align: right;
   width: 100%;
+  position: relative;
   /* Chrome, Safari, Edge, Opera */
   /* Firefox */
 }
@@ -192,53 +229,20 @@ span {
   margin: 0 auto;
   margin-bottom: 15px;
 }
-.input-icon-container .in-box {
-  align-items: center;
-  height: 40px !important;
-  padding: 0.5rem 1rem;
-  margin-bottom: 0;
-  line-height: 1.5;
-  text-align: center;
-  white-space: nowrap;
-  display: flex;
-  background-color: #019ba7;
-  border: 1px solid #019ba7;
-  width: auto;
-  height: auto;
-  font-family: "Vazir" !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  font-size: 14px !important;
-  color: #FFFFFF !important;
-  border-radius: 6px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  direction: initial;
-}
 .input-icon-container .rounded-4 {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-}
-.input-icon-container .icon {
-  height: 1.5rem;
-  width: 1.5rem;
-  padding: 2px;
-  position: absolute;
-  box-sizing: border-box;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
 }
 .input-icon-container .input {
   background-color: #FFFFFF;
   width: 100% !important;
   outline: unset;
-  text-align: center;
+  text-align: right;
   padding: 0.5rem 1rem;
   direction: ltr;
   line-height: 1.5;
   background-clip: padding-box;
-  border: 1px solid #f7f7f7;
+  border: 1px solid #c3c3c3;
   width: auto;
   height: auto;
   font-family: "Vazir" !important;
@@ -246,28 +250,28 @@ span {
   font-weight: 400 !important;
   font-size: 14px !important;
   color: #000000 !important;
-  border-radius: 6px;
+  border-radius: 8px;
   box-sizing: border-box;
   padding-left: 1.5rem;
-  height: 40px;
+  height: 60px;
 }
 .input-icon-container .input:disabled {
   background: #f7f8fa !important;
 }
 .input-icon-container .input:focus {
   outline: none;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border: 1px solid #000000;
 }
 .input-icon-container .input:hover {
   outline: none;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border: 1px solid #000000;
 }
 .input-icon-container .deactive {
   background: #909090;
 }
 .input-icon-error {
   font-size: 12px;
-  color: #FC4A56;
+  color: #FC4A56 !important;
 }
 .input-icon input::-webkit-outer-spin-button,
 .input-icon input::-webkit-inner-spin-button {
@@ -279,8 +283,8 @@ span {
 }
 
 .button-component {
-  width: 120px;
-  height: 40px;
+  width: 100%;
+  height: 53px;
   border: none;
   border-radius: 8px;
   display: flex;
@@ -427,6 +431,16 @@ span {
   font-size: 1rem !important;
   color: #000000 !important;
   margin-bottom: 5px;
+}
+.main-page .main-card .form .code {
+  margin: 0px;
+  width: auto;
+  height: auto;
+  font-family: "Vazir" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 0.75rem !important;
+  color: #909090 !important;
 }
 .main-page .main-card .form .column-50 {
   width: 48%;

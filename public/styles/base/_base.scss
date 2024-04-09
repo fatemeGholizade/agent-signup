@@ -67,12 +67,22 @@ body {
     display: none;
   }
 }
-.padd-l-10{
-  padding-left: 10px;
+.marg-t-12{
+  margin-top: 12px;
+}
+.marg-t-36{
+  margin-top: 36px;
 }
 .height-500{
   height: 500px;
 } 
+.error-text{
+  font-size: 14px;
+  color: $red !important ;
+  display: flex;
+  align-items: right;
+  margin-top: 6px;
+}
 
 .margin-b-0{
   margin-bottom:  0 !important;
@@ -86,11 +96,21 @@ body {
 ::-webkit-scrollbar-thumb {
   background: $gray;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .blue-button{
   background-color: $blue !important;
 }
-span{
-  margin: 0px;
-  @include FontStyle(0.75rem, normal, $gray);
-
+.blue-transparent-button{
+  background: $blue !important;
+  opacity: 0.3;
+  color: $white;
 }
