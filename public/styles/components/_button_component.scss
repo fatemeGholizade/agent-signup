@@ -1,0 +1,25 @@
+.button-component {
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $hotPink;
+  cursor: pointer;
+
+  &-text {
+    @include FontStyle(16px, 600, $white);
+    margin: 0;
+    cursor: pointer;
+  }
+  &-title{
+    display: flex;
+    align-items: center;
+    svg{
+      margin-top: 2px;
+      margin-left: 4px;
+    }
+  }
+}

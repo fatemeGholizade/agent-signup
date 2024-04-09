@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "vazir";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../../fonts/Vazir-Medium-FD_p30download.com.ttf)
+}
+
+@mixin FontStyle($fontSize, $fontWeight, $Color) {
+  width: auto;
+  height: auto;
+  font-family: 'Vazir' !important;
+  font-style: normal !important;
+  font-weight: $fontWeight  !important;
+  font-size: $fontSize  !important;
+  color: $Color  !important;
+
+}
+@mixin Display($display: flex, $justify: flex-start, $align: flex-start, $direction: row, $wrap: nowrap) {
+  display: $display  !important;
+  justify-content: $justify  !important;
+  align-items: $align  !important;
+  flex-direction: $direction  !important;
+  flex-wrap: $wrap  !important;
+}
+@mixin Border($size: 0px, $color: transparent, $radius: 0px) {
+  border: $size solid $color  !important;
+  border-radius: $radius  !important;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  font-family: 'Vazir' !important;
+  background-color: $bgWhite !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin: 0 !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.col {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.row>* {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+
+.hide-desktop {
+  @media only screen and (min-width: 769px) {
+    display: none;
+  }
+}
+.hide-mobile {
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.padd-l-10{
+  padding-left: 10px;
+}
+.height-500{
+  height: 500px;
+} 
+
+.margin-b-0{
+  margin-bottom:  0 !important;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: $bgWhite;
+}
+::-webkit-scrollbar-thumb {
+  background: $gray;
+}
+.blue-button{
+  background-color: $blue !important;
+}
+

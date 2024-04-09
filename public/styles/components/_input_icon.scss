@@ -1,0 +1,103 @@
+.input-icon{
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  width: 100%;
+  &-label{
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: $lightPurple;
+
+  }
+
+  &-container {
+    display: flex;
+    width: 100%;
+    position:relative;
+    margin:  0 auto;
+    margin-bottom: 15px;
+    .in-box {
+      
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 40px !important;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    background-color: $blue;
+    border: 1px solid $blue;
+    @include FontStyle(14px, 400, $white);
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    direction: initial;
+     }
+     .rounded-4{
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      }
+        
+    .icon {
+      height: 1.5rem;
+      width: 1.5rem;
+      padding: 2px;
+      position: absolute;
+      box-sizing:border-box;
+      top:50%;
+      left:10px;
+      transform: translateY(-50%);
+    }
+     .input{
+      background-color: $white;
+      width: 100% !important;
+      outline: unset;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      direction: ltr;
+      line-height: 1.5;
+      background-clip: padding-box;
+      border: 1px solid $lightBlue;
+      @include FontStyle(14px, 400, $black);
+      border-radius: 6px;
+      box-sizing:border-box;
+      padding-left: 1.5rem;
+      height: 40px;
+
+  
+    &:disabled {
+      background: $disabled !important;
+    }
+      &:focus {
+        outline: none;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      }
+      &:hover {
+        outline: none;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      }
+     }
+     .deactive{
+      background: $gray;
+    }
+    
+  }
+  &-error{
+    font-size: 12px;
+    color: $red;
+  }
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}

@@ -1,0 +1,50 @@
+.table-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow:auto;  
+    width:100%;
+    max-width: 750px
+    ;
+    .table{
+        border-collapse:collapse;
+        margin: 25px 0;
+        width: 100%;
+        tbody{
+            display: block;
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+        td{
+            
+            input{
+            border: 1px solid rgb(211, 208, 208);
+            border-radius: 4px;
+            background-color: transparent;
+            width: 240px;
+            text-align: center;
+            height: 35px;
+            @include FontStyle(16px, 600, $black);
+            &:disabled {
+                background: $disabled !important;
+              }
+            &:focus {
+                outline: none;
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            }              
+        }
+    }
+    tr {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        border-bottom: 1px solid #dddddd;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+    .table tbody tr:nth-of-type(odd) {
+        background-color: $lightBlue;
+    }       
+}
