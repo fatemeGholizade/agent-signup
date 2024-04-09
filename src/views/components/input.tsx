@@ -3,6 +3,7 @@ import {
   InputHTMLAttributes,
   ReactElement,
   useCallback,
+  useState,
 } from "react";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
@@ -25,43 +26,46 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 
 }
 
-const InputIcon = ({
+const Input = ({
   inBox,
   value,
   onChange,
   placeholder,
   type,
   errortext,
-  iconStyle,
   disabled,
   myStyle,
   defaultValue,
   inputContainerStyle,
   containerStyle,
   min,
-  icon,
   onClick,
-  label,
   name,
   onKeyDown,
 }: Props): ReactElement => {
+  const [isFocused, setIsFocused] = useState(false);
   const handleOnChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       onChange?.(event);
     },
     [onChange]
   );
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
   return (
     <div className={`input-icon ${myStyle}`} >
-     {label &&  <label className="input-icon-label">{label}</label>}
       <div className={`input-icon-container ${containerStyle}` }>
-        {inBox && 
-        <div className="in-box" >{inBox }</div>
-        }
-        {icon && <span className={`icon ${iconStyle}`} onClick={onClick}>{icon}</span>}
         <input
           type={type}
-          placeholder={placeholder}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          placeholder={isFocused ? '' : placeholder}
           onChange={handleOnChange}
           className={`${inputContainerStyle} ${inBox ? "rounded-4" : "" } input`}
           value={value}
@@ -83,4 +87,4 @@ const InputIcon = ({
     </div>
   );
 }
-export default InputIcon;
+export default Input;

@@ -1,4 +1,3 @@
-export interface TableProps {
-    rows: string;
-    columns: string;
+export interface User {
+    phone: string;
   }
