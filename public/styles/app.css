@@ -313,57 +313,38 @@ input[type=number] {
   margin-left: 4px;
 }
 
-.table-container {
+.otp-group {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  overflow: auto;
   width: 100%;
-  max-width: 750px;
+  max-width: 360px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  flex-flow: row-reverse;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 15px;
 }
-.table-container .table {
-  border-collapse: collapse;
-  margin: 25px 0;
+.otp-group .otp-input {
   width: 100%;
-}
-.table-container .table tbody {
-  display: block;
-  max-height: 400px;
-  overflow-y: scroll;
-}
-.table-container .table td input {
-  border: 1px solid rgb(211, 208, 208);
-  border-radius: 4px;
-  background-color: transparent;
-  width: 240px;
+  height: 60px;
+  border-radius: 5px;
   text-align: center;
-  height: 35px;
+  line-height: 1;
   width: auto;
   height: auto;
   font-family: "Vazir" !important;
   font-style: normal !important;
-  font-weight: 600 !important;
-  font-size: 16px !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
   color: #000000 !important;
-}
-.table-container .table td input:disabled {
-  background: #f7f8fa !important;
-}
-.table-container .table td input:focus {
-  outline: none;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-.table-container .table tr {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  border-bottom: 1px solid #dddddd;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.table-container .table tbody tr:nth-of-type(odd) {
-  background-color: #f7f7f7;
+  background-color: #FFFFFF;
+  width: 100% !important;
+  outline: unset;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 2px solid #019ba7;
 }
 
 .main-page {
@@ -441,6 +422,10 @@ input[type=number] {
   font-weight: normal !important;
   font-size: 0.75rem !important;
   color: #909090 !important;
+}
+.main-page .main-card .form .timer-container {
+  display: flex;
+  direction: rtl;
 }
 .main-page .main-card .form .column-50 {
   width: 48%;
