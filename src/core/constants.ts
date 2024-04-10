@@ -5,4 +5,5 @@ export class AppConstants {
   static base_url_image: string = "";
 
 }
+export const RE_DIGIT = new RegExp(/^\d+$/);
 

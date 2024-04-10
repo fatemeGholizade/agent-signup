@@ -16,6 +16,7 @@ import { AppConstants } from "../../../core/constants";
 import { toast } from "react-toastify";
 import PhonePage from "../phonePage";
 import { useSelector } from "react-redux";
+import Otp from "../otp";
 
 const theme = createTheme({
   direction: 'rtl',
@@ -34,10 +35,6 @@ export function MainPage({}) {
 const theme = createTheme({
   direction: 'rtl',
 });
-const handleBackButton = () =>{
-  setDataIsSet(false);
-  setData({phone: "0" })
-}
 const reduxData = useSelector((state:{data:any}) => state.data);
 
   return (
@@ -51,13 +48,10 @@ const reduxData = useSelector((state:{data:any}) => state.data);
       </div>
         <>
         <div className="form">
-          {reduxData.step === 0 ?
-          <>
+          {reduxData.step === 0 ?      
           <PhonePage />
-
-         
-            </> : reduxData.step === 1 ? 
-            <div></div> : reduxData.step === 2 ? <div></div> : reduxData.step === 3 ? <div></div> :
+            : reduxData.step === 1 ? 
+            <Otp /> : reduxData.step === 2 ? <div></div> : reduxData.step === 3 ? <div></div> :
            reduxData.step === 4 ? <div></div> : <div>k</div>}
         </div>
         </>     
