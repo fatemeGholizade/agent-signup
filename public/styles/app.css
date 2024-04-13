@@ -51,7 +51,7 @@ body {
 }
 
 .marg-t-36 {
-  margin-top: 36px;
+  margin-top: 36px !important;
 }
 
 .marg-t-3 {
@@ -113,6 +113,10 @@ input[type=number] {
 
 .border-blue {
   border: 1px solid #019ba7 !important;
+}
+
+li {
+  list-style: none;
 }
 
 @font-face {
@@ -168,7 +172,7 @@ body {
 }
 
 .marg-t-36 {
-  margin-top: 36px;
+  margin-top: 36px !important;
 }
 
 .marg-t-3 {
@@ -232,6 +236,10 @@ input[type=number] {
   border: 1px solid #019ba7 !important;
 }
 
+li {
+  list-style: none;
+}
+
 .input-icon {
   display: flex;
   flex-direction: column;
@@ -280,7 +288,7 @@ input[type=number] {
   height: 60px;
 }
 .input-icon-container .input:disabled {
-  background: #f7f8fa !important;
+  background: #e7e7e7 !important;
 }
 .input-icon-container .input:focus {
   outline: none;
@@ -478,4 +486,9 @@ input[type=number] {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+}
+
+.MuiDialog-paper {
+  width: 100% !important;
+  height: 50% !important;
 }/*# sourceMappingURL=app.css.map */
