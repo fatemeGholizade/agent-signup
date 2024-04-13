@@ -17,7 +17,7 @@ import { toast } from "react-toastify";
 import PhonePage from "../phonePage";
 import { useSelector } from "react-redux";
 import Otp from "../otp";
-
+import UserName from "../userName";
 const theme = createTheme({
   direction: 'rtl',
 });
@@ -51,8 +51,9 @@ const reduxData = useSelector((state:{data:any}) => state.data);
           {reduxData.step === 0 ?      
           <PhonePage />
             : reduxData.step === 1 ? 
-            <Otp /> : reduxData.step === 2 ? <div></div> : reduxData.step === 3 ? <div></div> :
-           reduxData.step === 4 ? <div></div> : <div>k</div>}
+            <Otp /> : reduxData.step === 2 ? <UserName /> : 
+            reduxData.step === 3 ? <div></div> :
+            reduxData.step === 4 ? <div></div> : <div>k</div>}
         </div>
         </>     
       </div>
