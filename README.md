@@ -1,2 +1,2 @@
-This project isabout signing up an agent.
+This project is about signing up an agent.
 used libraries: MUI, Yup, Redux and Redux-persist.
