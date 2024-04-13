@@ -8,16 +8,12 @@ export function parseJSON(response:any) {
     }
     return Promise.all([statusCode, json])
 }
-export const call_api = ({ address_api, method_api, body, file } : any) => {
+export const call_api = ({ address_api, method_api, body, header } : any) => {
     let headers
-    if (file) {
+    if (header) {
         headers = {
             Accept: 'application/json',
-        }
-    } else {
-        headers = {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
+            Authorization: `jwt ${window.localStorage.getItem('token')}`,
         }
     }
     return fetch(address_api, {
