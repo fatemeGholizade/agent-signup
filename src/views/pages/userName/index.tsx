@@ -29,7 +29,9 @@ const UserName = () => {
           })
         try {
           await dataSchema.validate({shortName, familyName}, { abortEarly: false }); 
-          dispatch(step(3), name(shortName), family(familyName));
+          dispatch(step(3));
+          dispatch(name(shortName));
+          dispatch(family(familyName))
           
         }
         catch (err: any) {

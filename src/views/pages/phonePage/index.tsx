@@ -43,7 +43,7 @@ const PhonePage = () => {
                 dispatch(step(1));
             }      
               else {
-                toast.error(j?.message);
+                toast.error(j?.error_details?.fa_details                );
               }
             })
             .catch((error) => {
