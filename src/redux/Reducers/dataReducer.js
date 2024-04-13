@@ -1,12 +1,15 @@
-import { phoneNumber } from "../services/dataService";
 import {
-  SET_PHONE_NUMBER,
-  SET_STEP,
+  SET_PHONE_NUMBER ,
+  SET_FAMILY,
+  SET_NAME,
+  SET_STEP, 
 } from "../type";
 
 const initialState = {
   phone_number:"",
   step:0,
+  name:"",
+  family:"",
 
 };
 
@@ -21,6 +24,16 @@ const dataReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         step: action.payload,
+      };
+      case SET_NAME : 
+      return {
+        ...state,
+        name: action.payload,
+      };
+      case SET_FAMILY : 
+      return {
+        ...state,
+        family: action.payload,
       };
     default:
       return state;
