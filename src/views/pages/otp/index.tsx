@@ -1,5 +1,5 @@
 import { CustomButton, Input, InputTextLabel, OtpInput } from "../../components";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as yup from 'yup'
 import { call_api, parseJSON } from "../../../core/service";
 import { AppConstants } from "../../../core/constants";
@@ -7,13 +7,13 @@ import { toast } from "react-toastify";
 import { useSelector, useDispatch } from 'react-redux';
 import { phoneNumber, step } from "../../../redux/services/dataService";
 import { toFarsiNumber } from "../../../core/utils";
-
+import EditIcon from '@mui/icons-material/Edit';
 const Otp = () => {    
     const [ otpCode, setOtpCode] = useState("");
     const [ resend, setResend ] = useState(false);
     const myInterval = useRef<any>(null);
     const [ minutes, setMinutes] = useState(2);
-    const [ seconds, setSeconds] = useState(2);
+    const [ seconds, setSeconds] = useState(0);
     const dispatch = useDispatch();
     const [errorsList, setErrorsList] = useState<Array<any>>([]);
     const handleOtpdKeyPressDown  = (event: { key: string; }) => {
@@ -93,7 +93,7 @@ const Otp = () => {
      async function otpLogin () {
         setErrorsList([]);
         const otpRegisterSchema = yup.object({
-            otpCode: yup.string().required(" کد ورود الزامی می‌باشد  ").length(6, 'کد ورود 6 رقم می‌باشد'),
+            otpCode: yup.string().required(" کد ورود الزامی می‌باشد  ").length(5, 'کد ورود 5 رقم می‌باشد'),
           });
           try {
             await otpRegisterSchema.validate({ otpCode }, { abortEarly: false });
@@ -124,13 +124,20 @@ const Otp = () => {
     }
     const reduxData = useSelector((state:{data:any}) => state.data);
     handleTimer();
+    useEffect(() => {
+      if(otpCode.length === 5){
+        otpLogin();
+      }
+
+    }, [])
     return(
      <>
       <p className="guide">کد تأیید را وارد نمایید.</p>
       <div>
+       <EditIcon className="edit-icon" onClick={() => dispatch(step(0))}/>
        <span className="code"> {reduxData.phone_number}</span>
       </div>
-      <OtpInput value={otpCode} valueLength={6} 
+      <OtpInput myStyle={"marg-t-12"} value={otpCode} valueLength={5} 
         onChange={ (value: string) => handleOtp(value)} 
         onKeyDown={handleOtpdKeyPressDown}
       />
@@ -139,17 +146,14 @@ const Otp = () => {
       {!resend  ?
       <>
         <div className="timer-container">
-        <span className="code">ارسال مجدد کد</span>
+        <span className="code marg-t-3">ارسال مجدد کد</span>
         <div className="timer">
         {`${toFarsiNumber(minutes)} ${minutes > 0 ? ":" : " "} ${toFarsiNumber(seconds) < 10 
          ? toFarsiNumber("0") + toFarsiNumber(seconds) 
         : toFarsiNumber(seconds)} `}
         </div>
       </div>
-      <CustomButton myStyle="blue-transparent-button marg-t-36" title="ادامه" onClick={() => otpLogin()}/>
-
-
-      
+      <CustomButton myStyle={`${otpCode.length === 5 ? "blue-button" : "blue-transparent-button"} marg-t-36`} title="ادامه" onClick={() => otpLogin()}/>
         </>
       :
       <CustomButton myStyle="blue-button marg-t-36" title="ارسال مجدد کد" onClick={() => handleResendCode() } />

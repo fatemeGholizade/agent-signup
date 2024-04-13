@@ -68,10 +68,13 @@ body {
   }
 }
 .marg-t-12{
-  margin-top: 12px;
+  margin-top: 12px !important;
 }
 .marg-t-36{
   margin-top: 36px;
+}
+.marg-t-3{
+  margin-top: 3px !important;
 }
 .height-500{
   height: 500px;
@@ -113,4 +116,10 @@ input[type=number] {
   background: $blue !important;
   opacity: 0.3;
   color: $white;
+}
+.border-gray{
+  border: 1px solid $borderGray !important;
+}
+.border-blue{
+  border: 1px solid $blue !important;
 }

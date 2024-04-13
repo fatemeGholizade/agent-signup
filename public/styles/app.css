@@ -47,11 +47,15 @@ body {
 }
 
 .marg-t-12 {
-  margin-top: 12px;
+  margin-top: 12px !important;
 }
 
 .marg-t-36 {
   margin-top: 36px;
+}
+
+.marg-t-3 {
+  margin-top: 3px !important;
 }
 
 .height-500 {
@@ -101,6 +105,14 @@ input[type=number] {
   background: #019ba7 !important;
   opacity: 0.3;
   color: #FFFFFF;
+}
+
+.border-gray {
+  border: 1px solid #c3c3c3 !important;
+}
+
+.border-blue {
+  border: 1px solid #019ba7 !important;
 }
 
 @font-face {
@@ -152,11 +164,15 @@ body {
 }
 
 .marg-t-12 {
-  margin-top: 12px;
+  margin-top: 12px !important;
 }
 
 .marg-t-36 {
   margin-top: 36px;
+}
+
+.marg-t-3 {
+  margin-top: 3px !important;
 }
 
 .height-500 {
@@ -206,6 +222,14 @@ input[type=number] {
   background: #019ba7 !important;
   opacity: 0.3;
   color: #FFFFFF;
+}
+
+.border-gray {
+  border: 1px solid #c3c3c3 !important;
+}
+
+.border-blue {
+  border: 1px solid #019ba7 !important;
 }
 
 .input-icon {
@@ -344,7 +368,6 @@ input[type=number] {
   text-align: center;
   line-height: 1.5;
   background-clip: padding-box;
-  border: 2px solid #019ba7;
 }
 
 .main-page {
@@ -401,6 +424,15 @@ input[type=number] {
   margin-left: auto;
   background-color: #FFFFFF;
 }
+.main-page .main-card .form .edit-icon {
+  color: #FFFFFF;
+  border-radius: 50%;
+  background-color: #019ba7;
+  width: 22px;
+  height: 21px;
+  margin-left: 10px;
+  cursor: pointer;
+}
 .main-page .main-card .form .guide {
   margin: 0px;
   line-height: 1.875rem;
@@ -426,6 +458,11 @@ input[type=number] {
 .main-page .main-card .form .timer-container {
   display: flex;
   direction: rtl;
+  justify-content: center;
+}
+.main-page .main-card .form .timer-container .timer {
+  margin-right: 20px;
+  direction: ltr;
 }
 .main-page .main-card .form .column-50 {
   width: 48%;

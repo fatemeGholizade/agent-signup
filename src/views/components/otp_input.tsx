@@ -3,11 +3,12 @@ import { RE_DIGIT } from '../../core/constants';
 
 export type Props = {
   value: string;
+  myStyle?:string;
   valueLength: number;
   onChange: (value: string) => void;
   onKeyDown?:any;
 };
-export default function OtpInput({ value, valueLength, onKeyDown, onChange }: Props) {
+export default function OtpInput({ value, valueLength, myStyle, onKeyDown, onChange }: Props) {
   const valueItems = useMemo(() => {
     const valueArray = value.split('');
     const items: Array<string> = [];
@@ -89,7 +90,7 @@ export default function OtpInput({ value, valueLength, onKeyDown, onChange }: Pr
     target.setSelectionRange(0, target.value.length);
   };
   return (
-    <div className="otp-group" onKeyDown={onKeyDown}>
+    <div className={`${myStyle} otp-group`} onKeyDown={onKeyDown}>
       {valueItems.map((digit, idx) => (
         <input
           key={idx}
@@ -98,7 +99,7 @@ export default function OtpInput({ value, valueLength, onKeyDown, onChange }: Pr
           autoComplete="one-time-code"
           pattern="\d{1}"
           maxLength={valueLength}
-          className={`otp-input ${digit ? "border-green" : "border-yellow"}`}
+          className={`otp-input ${digit ? "border-blue" : "border-gray"}`}
           value={digit}
           onChange={(e) => inputOnChange(e, idx)}
           onKeyDown={inputOnKeyDown}
